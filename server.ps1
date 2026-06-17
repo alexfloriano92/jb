@@ -4,11 +4,11 @@ $port = 8090
 $root = "c:\Users\User\Documents\JB"
 
 $listener = [System.Net.HttpListener]::new()
-$listener.Prefixes.Add("http://+:$port/")
 try {
+    $listener.Prefixes.Add("http://+:$port/")
     $listener.Start()
 } catch {
-    $listener.Prefixes.Clear()
+    $listener = [System.Net.HttpListener]::new()
     $listener.Prefixes.Add("http://localhost:$port/")
     $listener.Start()
 }

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
@@ -41,19 +41,19 @@
 
     /* ===== CSS VARIABLES ===== */
     :root {
-      --gold: #D4A843;
-      --gold-light: #F0C060;
-      --gold-dark: #A07820;
+      --gold: #FFC501;
+      --gold-light: #FDD621;
+      --gold-dark: #E5B000;
       --dark-bg: #080810;
       --dark-surface: #0f0f1a;
       --dark-card: #13131f;
       --dark-border: #1e1e2e;
-      --text-primary: #f0f0fa;
-      --text-secondary: #9090b0;
-      --text-muted: #606080;
-      --gradient-gold: linear-gradient(135deg, #D4A843, #F0C060, #D4A843);
+      --text-primary: #ffffff;
+      --text-secondary: #d1d2e0;
+      --text-muted: #9aa0c0;
+      --gradient-gold: linear-gradient(135deg, #FFC501, #FDD621, #FFC501);
       --gradient-dark: linear-gradient(135deg, #080810 0%, #0f0f1a 100%);
-      --shadow-gold: 0 0 30px rgba(212, 168, 67, 0.15);
+      --shadow-gold: 0 0 30px rgba(255, 197, 1, 0.15);
       --shadow-card: 0 8px 40px rgba(0, 0, 0, 0.6);
       --radius: 16px;
       --radius-sm: 8px;
@@ -149,7 +149,7 @@
       display: block;
       object-fit: contain;
       transition: all 0.4s ease;
-      filter: drop-shadow(0 2px 16px rgba(212, 168, 67, 0.3));
+      filter: drop-shadow(0 2px 16px rgba(255, 197, 1, 0.3));
     }
 
     #navbar.scrolled .nav-logo-img {
@@ -158,7 +158,7 @@
 
     .nav-logo:hover .nav-logo-img {
       opacity: 0.9;
-      filter: drop-shadow(0 0 22px rgba(212, 168, 67, 0.6));
+      filter: drop-shadow(0 0 22px rgba(255, 197, 1, 0.6));
       transform: scale(1.03);
     }
 
@@ -227,7 +227,7 @@
 
     .nav-cta:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(212, 168, 67, 0.4) !important;
+      box-shadow: 0 8px 25px rgba(255, 197, 1, 0.4) !important;
     }
 
     .nav-cta::after {
@@ -326,8 +326,8 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(212, 168, 67, 0.15);
-      border: 1px solid rgba(212, 168, 67, 0.3);
+      background: rgba(255, 197, 1, 0.15);
+      border: 1px solid rgba(255, 197, 1, 0.3);
       padding: 8px 16px;
       border-radius: 50px;
       font-size: 12px;
@@ -419,12 +419,12 @@
       text-decoration: none;
       letter-spacing: 0.5px;
       transition: all 0.3s;
-      box-shadow: 0 4px 20px rgba(212, 168, 67, 0.3);
+      box-shadow: 0 4px 20px rgba(255, 197, 1, 0.3);
     }
 
     .btn-primary:hover {
       transform: translateY(-3px);
-      box-shadow: 0 12px 40px rgba(212, 168, 67, 0.5);
+      box-shadow: 0 12px 40px rgba(255, 197, 1, 0.5);
     }
 
     .btn-secondary {
@@ -448,7 +448,7 @@
       border-color: var(--gold);
       color: var(--gold);
       transform: translateY(-3px);
-      background: rgba(212, 168, 67, 0.05);
+      background: rgba(255, 197, 1, 0.05);
     }
 
     .hero-scroll-indicator {
@@ -567,14 +567,14 @@
     }
 
     .service-strip-item:hover {
-      background: rgba(212, 168, 67, 0.03);
+      background: rgba(255, 197, 1, 0.03);
     }
 
     .service-strip-icon {
       width: 48px;
       height: 48px;
-      background: rgba(212, 168, 67, 0.1);
-      border: 1px solid rgba(212, 168, 67, 0.2);
+      background: rgba(255, 197, 1, 0.1);
+      border: 1px solid rgba(255, 197, 1, 0.2);
       border-radius: 12px;
       display: flex;
       align-items: center;
@@ -586,8 +586,8 @@
     }
 
     .service-strip-item:hover .service-strip-icon {
-      background: rgba(212, 168, 67, 0.2);
-      box-shadow: 0 0 20px rgba(212, 168, 67, 0.2);
+      background: rgba(255, 197, 1, 0.2);
+      box-shadow: 0 0 20px rgba(255, 197, 1, 0.2);
     }
 
     .service-strip-text strong {
@@ -612,8 +612,8 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(212, 168, 67, 0.1);
-      border: 1px solid rgba(212, 168, 67, 0.2);
+      background: rgba(255, 197, 1, 0.1);
+      border: 1px solid rgba(255, 197, 1, 0.2);
       padding: 6px 14px;
       border-radius: 50px;
       font-size: 11px;
@@ -699,7 +699,7 @@
 
     .vehicle-card:hover {
       transform: translateY(-8px);
-      border-color: rgba(212, 168, 67, 0.3);
+      border-color: rgba(255, 197, 1, 0.3);
       box-shadow: var(--shadow-gold), var(--shadow-card);
     }
 
@@ -802,8 +802,8 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(212, 168, 67, 0.1);
-      border: 1px solid rgba(212, 168, 67, 0.3);
+      background: rgba(255, 197, 1, 0.1);
+      border: 1px solid rgba(255, 197, 1, 0.3);
       color: var(--gold);
       padding: 10px 18px;
       border-radius: 10px;
@@ -895,7 +895,7 @@
       background: var(--gradient-gold);
       border-radius: var(--radius-sm);
       padding: 14px 18px;
-      box-shadow: 0 8px 30px rgba(212, 168, 67, 0.4);
+      box-shadow: 0 8px 30px rgba(255, 197, 1, 0.4);
     }
 
     .sobre-card-float2 .icon-big {
@@ -962,8 +962,8 @@
       font-weight: 800;
       font-size: 13px;
       color: var(--gold);
-      background: rgba(212, 168, 67, 0.1);
-      border: 1px solid rgba(212, 168, 67, 0.2);
+      background: rgba(255, 197, 1, 0.1);
+      border: 1px solid rgba(255, 197, 1, 0.2);
       padding: 4px 10px;
       border-radius: 6px;
       white-space: nowrap;
@@ -1043,12 +1043,12 @@
       right: 24px;
       font-family: 'Outfit', sans-serif;
       font-size: 80px;
-      color: rgba(212, 168, 67, 0.08);
+      color: rgba(255, 197, 1, 0.08);
       line-height: 1;
     }
 
     .review-card:hover {
-      border-color: rgba(212, 168, 67, 0.2);
+      border-color: rgba(255, 197, 1, 0.2);
       box-shadow: var(--shadow-gold);
       transform: translateY(-4px);
     }
@@ -1182,7 +1182,7 @@
     .form-control:focus {
       outline: none;
       border-color: var(--gold);
-      box-shadow: 0 0 0 3px rgba(212, 168, 67, 0.1);
+      box-shadow: 0 0 0 3px rgba(255, 197, 1, 0.1);
     }
 
     .form-control::placeholder {
@@ -1194,8 +1194,8 @@
     }
 
     .result-card {
-      background: linear-gradient(135deg, rgba(212, 168, 67, 0.1), rgba(212, 168, 67, 0.05));
-      border: 1px solid rgba(212, 168, 67, 0.25);
+      background: linear-gradient(135deg, rgba(255, 197, 1, 0.1), rgba(255, 197, 1, 0.05));
+      border: 1px solid rgba(255, 197, 1, 0.25);
       border-radius: var(--radius-sm);
       padding: 20px;
       margin-top: 8px;
@@ -1239,8 +1239,8 @@
     .fin-feature-icon {
       width: 48px;
       height: 48px;
-      background: rgba(212, 168, 67, 0.1);
-      border: 1px solid rgba(212, 168, 67, 0.2);
+      background: rgba(255, 197, 1, 0.1);
+      border: 1px solid rgba(255, 197, 1, 0.2);
       border-radius: 12px;
       display: flex;
       align-items: center;
@@ -1303,8 +1303,8 @@
     .contact-icon {
       width: 44px;
       height: 44px;
-      background: rgba(212, 168, 67, 0.1);
-      border: 1px solid rgba(212, 168, 67, 0.2);
+      background: rgba(255, 197, 1, 0.1);
+      border: 1px solid rgba(255, 197, 1, 0.2);
       border-radius: 10px;
       display: flex;
       align-items: center;
@@ -1409,7 +1409,7 @@
 
     .btn-submit:hover {
       transform: translateY(-2px);
-      box-shadow: 0 12px 40px rgba(212, 168, 67, 0.4);
+      box-shadow: 0 12px 40px rgba(255, 197, 1, 0.4);
     }
 
     .map-wrapper {
@@ -1946,7 +1946,7 @@
         <div class="vehicle-card-image">
           <div
             style="width:100%;height:100%;background:linear-gradient(135deg,#0a0a18,#141426);display:flex;align-items:center;justify-content:center;">
-            <i class="fas fa-truck-pickup" style="font-size:80px;color:rgba(212,168,67,0.2);"></i>
+            <i class="fas fa-truck-pickup" style="font-size:80px;color:rgba(255,197,1,0.2);"></i>
           </div>
           <span class="vehicle-badge badge-novo">0KM</span>
         </div>
@@ -1972,7 +1972,7 @@
         <div class="vehicle-card-image">
           <div
             style="width:100%;height:100%;background:linear-gradient(135deg,#0a0a18,#141426);display:flex;align-items:center;justify-content:center;">
-            <i class="fas fa-car" style="font-size:80px;color:rgba(212,168,67,0.2);"></i>
+            <i class="fas fa-car" style="font-size:80px;color:rgba(255,197,1,0.2);"></i>
           </div>
           <span class="vehicle-badge badge-novo">0KM</span>
         </div>
@@ -2136,7 +2136,7 @@
         <p class="review-text">"Fui bem recebido, tomei um cafezinho gostoso e saí com meu carro novo. Recomendo muito!"
         </p>
         <div class="review-author">
-          <div class="review-avatar" style="background:linear-gradient(135deg,#D4A843,#A07820)">M</div>
+          <div class="review-avatar" style="background:linear-gradient(135deg,#FFC501,#E5B000)">M</div>
           <div class="review-author-info">
             <strong>Marcos Alves</strong>
             <span>Cliente verificado</span>
@@ -2408,7 +2408,7 @@
           <li><a href="#contato">Cachoeira de Minas - MG</a></li>
         </ul>
         <div
-          style="margin-top:24px;padding:16px;background:rgba(212,168,67,0.08);border:1px solid rgba(212,168,67,0.2);border-radius:12px;">
+          style="margin-top:24px;padding:16px;background:rgba(255,197,1,0.08);border:1px solid rgba(255,197,1,0.2);border-radius:12px;">
           <div
             style="font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">
             Aberto Hoje</div>
