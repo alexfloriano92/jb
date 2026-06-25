@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
@@ -654,10 +654,242 @@
       background: var(--dark-bg);
     }
 
+    /* ===== CATALOG SEARCH ===== */
+    .catalog-search-wrapper {
+      position: relative;
+      margin-bottom: 28px;
+    }
+
+    .catalog-search-box {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      background: var(--dark-card);
+      border: 1.5px solid var(--dark-border);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .catalog-search-box:focus-within {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 4px rgba(255, 197, 1, 0.1);
+    }
+
+    .catalog-search-icon {
+      padding: 0 18px;
+      color: var(--gold);
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    #catalogSearch {
+      flex: 1;
+      background: transparent;
+      border: none;
+      outline: none;
+      padding: 16px 0;
+      color: var(--text-primary);
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+    }
+
+    #catalogSearch::placeholder {
+      color: var(--text-muted);
+    }
+
+    .catalog-search-clear {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      padding: 0 18px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: color 0.2s;
+      display: none;
+    }
+
+    .catalog-search-clear:hover {
+      color: var(--gold);
+    }
+
+    /* Suggestions Dropdown */
+    .catalog-suggestions {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      right: 0;
+      background: var(--dark-card);
+      border: 1px solid var(--dark-border);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 16px 50px rgba(0,0,0,0.6);
+      z-index: 100;
+      display: none;
+    }
+
+    .catalog-suggestions.open {
+      display: block;
+    }
+
+    .suggestion-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 12px 18px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .suggestion-item:hover {
+      background: rgba(255, 197, 1, 0.07);
+    }
+
+    .suggestion-item-icon {
+      width: 34px;
+      height: 34px;
+      background: rgba(255, 197, 1, 0.1);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-size: 13px;
+      flex-shrink: 0;
+    }
+
+    .suggestion-item-text strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .suggestion-item-text span {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .suggestion-item em {
+      color: var(--gold);
+      font-style: normal;
+    }
+
+    /* Search result info */
+    .catalog-result-info {
+      display: none;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      background: rgba(255, 197, 1, 0.07);
+      border: 1px solid rgba(255, 197, 1, 0.2);
+      border-radius: 10px;
+      margin-bottom: 24px;
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    .catalog-result-info.visible {
+      display: flex;
+    }
+
+    .catalog-result-info i {
+      color: var(--gold);
+    }
+
+    .catalog-result-info strong {
+      color: var(--gold);
+    }
+
+    .result-clear-btn {
+      margin-left: auto;
+      background: none;
+      border: 1px solid rgba(255, 197, 1, 0.3);
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .result-clear-btn:hover {
+      background: var(--gold);
+      color: #000;
+    }
+
+    /* No results state */
+    .catalog-no-results {
+      display: none;
+      text-align: center;
+      padding: 60px 20px;
+      grid-column: 1 / -1;
+    }
+
+    .catalog-no-results.visible {
+      display: block;
+    }
+
+    .no-results-icon {
+      font-size: 56px;
+      color: rgba(255, 197, 1, 0.2);
+      margin-bottom: 20px;
+    }
+
+    .no-results-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+    }
+
+    .no-results-text {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    /* Brand pills */
+    .catalog-brand-pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .brand-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      background: var(--dark-surface);
+      border: 1px solid var(--dark-border);
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.25s;
+    }
+
+    .brand-pill:hover,
+    .brand-pill.active {
+      border-color: var(--gold);
+      color: var(--gold);
+      background: rgba(255, 197, 1, 0.07);
+    }
+
+    .brand-pill i {
+      font-size: 11px;
+    }
+
     .catalog-filters {
       display: flex;
       gap: 10px;
-      margin-bottom: 40px;
+      margin-bottom: 24px;
       flex-wrap: wrap;
     }
 
@@ -1841,6 +2073,46 @@
       <p class="section-subtitle">Veículos selecionados com procedência garantida. 0KM e seminovos esperando por você.
       </p>
     </div>
+
+    <!-- Search Bar -->
+    <div class="catalog-search-wrapper fade-in-up">
+      <div class="catalog-search-box">
+        <span class="catalog-search-icon"><i class="fas fa-search"></i></span>
+        <input
+          type="text"
+          id="catalogSearch"
+          placeholder="Buscar por marca ou modelo... ex: Toyota, Onix, Hilux"
+          autocomplete="off"
+          oninput="handleSearchInput(this.value)"
+          onfocus="handleSearchFocus()"
+          onblur="handleSearchBlur()"
+        />
+        <button class="catalog-search-clear" id="searchClearBtn" onclick="clearSearch()" title="Limpar busca">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="catalog-suggestions" id="catalogSuggestions"></div>
+    </div>
+
+    <!-- Brand Pills -->
+    <div class="catalog-brand-pills fade-in-up" id="brandPills">
+      <button class="brand-pill active" data-brand="todas" onclick="filterByBrand('todas', this)"><i class="fas fa-th"></i> Todas as Marcas</button>
+      <button class="brand-pill" data-brand="chevrolet" onclick="filterByBrand('chevrolet', this)"><i class="fas fa-car"></i> Chevrolet</button>
+      <button class="brand-pill" data-brand="hyundai" onclick="filterByBrand('hyundai', this)"><i class="fas fa-car"></i> Hyundai</button>
+      <button class="brand-pill" data-brand="toyota" onclick="filterByBrand('toyota', this)"><i class="fas fa-car"></i> Toyota</button>
+      <button class="brand-pill" data-brand="jeep" onclick="filterByBrand('jeep', this)"><i class="fas fa-car"></i> Jeep</button>
+      <button class="brand-pill" data-brand="fiat" onclick="filterByBrand('fiat', this)"><i class="fas fa-car"></i> Fiat</button>
+      <button class="brand-pill" data-brand="volkswagen" onclick="filterByBrand('volkswagen', this)"><i class="fas fa-car"></i> Volkswagen</button>
+    </div>
+
+    <!-- Result info bar -->
+    <div class="catalog-result-info" id="catalogResultInfo">
+      <i class="fas fa-filter"></i>
+      <span id="resultInfoText">Mostrando resultados</span>
+      <button class="result-clear-btn" onclick="clearSearch()">Limpar filtro</button>
+    </div>
+
+    <!-- Category Filters -->
     <div class="catalog-filters fade-in-up">
       <button class="filter-btn active" id="filter-todos" onclick="filterVehicles('todos')">Todos</button>
       <button class="filter-btn" id="filter-novo" onclick="filterVehicles('novo')">0KM / Novos</button>
@@ -1850,7 +2122,17 @@
     </div>
     <div class="vehicles-grid" id="vehiclesGrid">
 
-      <div class="vehicle-card fade-in-up" data-category="seminovo">
+      <!-- No results placeholder -->
+      <div class="catalog-no-results" id="catalogNoResults">
+        <div class="no-results-icon"><i class="fas fa-car-side"></i></div>
+        <div class="no-results-title">Nenhum veículo encontrado</div>
+        <p class="no-results-text">Não encontramos veículos com esse nome.<br>Tente buscar por outra marca ou modelo.</p>
+        <a href="https://wa.me/5535999091119?text=Olá!%20Estou%20buscando%20um%20veículo%20específico%20e%20gostaria%20de%20ajuda." target="_blank" class="btn-primary" style="display:inline-flex;">
+          <i class="fab fa-whatsapp"></i> Perguntar pelo WhatsApp
+        </a>
+      </div>
+
+      <div class="vehicle-card fade-in-up" data-category="seminovo" data-brand="chevrolet" data-model="onix plus ltz">
         <div class="vehicle-card-image">
           <img src="assets/images/car_onix.png" alt="Chevrolet Onix Plus 2023" loading="lazy" />
           <span class="vehicle-badge badge-seminovo">Seminovo</span>
@@ -1873,7 +2155,7 @@
         </div>
       </div>
 
-      <div class="vehicle-card fade-in-up" data-category="seminovo">
+      <div class="vehicle-card fade-in-up" data-category="seminovo" data-brand="hyundai" data-model="hb20 vision">
         <div class="vehicle-card-image">
           <img src="assets/images/car_hb20.png" alt="Hyundai HB20 2022" loading="lazy" />
           <span class="vehicle-badge badge-seminovo">Seminovo</span>
@@ -1896,7 +2178,7 @@
         </div>
       </div>
 
-      <div class="vehicle-card fade-in-up" data-category="pickup">
+      <div class="vehicle-card fade-in-up" data-category="pickup" data-brand="toyota" data-model="hilux srx 4x4">
         <div class="vehicle-card-image">
           <img src="assets/images/car_hilux.png" alt="Toyota Hilux 2023" loading="lazy" />
           <span class="vehicle-badge badge-seminovo">Seminovo</span>
@@ -1919,7 +2201,7 @@
         </div>
       </div>
 
-      <div class="vehicle-card fade-in-up" data-category="suv">
+      <div class="vehicle-card fade-in-up" data-category="suv" data-brand="jeep" data-model="renegade longitude">
         <div class="vehicle-card-image">
           <img src="assets/images/car_renegade.png" alt="Jeep Renegade 2022" loading="lazy" />
           <span class="vehicle-badge badge-seminovo">Seminovo</span>
@@ -1942,7 +2224,7 @@
         </div>
       </div>
 
-      <div class="vehicle-card fade-in-up" data-category="novo pickup">
+      <div class="vehicle-card fade-in-up" data-category="novo pickup" data-brand="fiat" data-model="strada volcano">
         <div class="vehicle-card-image">
           <div
             style="width:100%;height:100%;background:linear-gradient(135deg,#0a0a18,#141426);display:flex;align-items:center;justify-content:center;">
@@ -1968,7 +2250,7 @@
         </div>
       </div>
 
-      <div class="vehicle-card fade-in-up" data-category="novo">
+      <div class="vehicle-card fade-in-up" data-category="novo" data-brand="volkswagen" data-model="polo track">
         <div class="vehicle-card-image">
           <div
             style="width:100%;height:100%;background:linear-gradient(135deg,#0a0a18,#141426);display:flex;align-items:center;justify-content:center;">
@@ -2461,26 +2743,141 @@
 
     document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
 
-    // ===== VEHICLE FILTER =====
+    // ===== CATALOG SEARCH & FILTER =====
+    const vehicleData = [
+      { brand: 'Chevrolet', model: 'Onix Plus LTZ', year: '2023', category: 'seminovo' },
+      { brand: 'Hyundai',   model: 'HB20 Vision',    year: '2022', category: 'seminovo' },
+      { brand: 'Toyota',    model: 'Hilux SRX 4x4',  year: '2023', category: 'pickup' },
+      { brand: 'Jeep',      model: 'Renegade Longitude', year: '2022', category: 'suv' },
+      { brand: 'Fiat',      model: 'Strada Volcano',  year: '2024', category: 'pickup' },
+      { brand: 'Volkswagen',model: 'Polo Track',      year: '2024', category: 'novo' },
+    ];
+
+    let currentSearch = '';
+    let currentCategory = 'todos';
+    let currentBrand = 'todas';
+    let searchBlurTimeout = null;
+
+    function handleSearchInput(val) {
+      currentSearch = val.trim().toLowerCase();
+      const clearBtn = document.getElementById('searchClearBtn');
+      clearBtn.style.display = currentSearch ? 'block' : 'none';
+      showSuggestions(currentSearch);
+      applyFilters();
+    }
+
+    function handleSearchFocus() {
+      clearTimeout(searchBlurTimeout);
+      const val = document.getElementById('catalogSearch').value.trim();
+      if (val.length > 0) showSuggestions(val.toLowerCase());
+    }
+
+    function handleSearchBlur() {
+      searchBlurTimeout = setTimeout(() => {
+        document.getElementById('catalogSuggestions').classList.remove('open');
+      }, 180);
+    }
+
+    function showSuggestions(query) {
+      const box = document.getElementById('catalogSuggestions');
+      if (!query) { box.classList.remove('open'); box.innerHTML = ''; return; }
+      const matches = vehicleData.filter(v =>
+        v.brand.toLowerCase().includes(query) || v.model.toLowerCase().includes(query)
+      );
+      if (matches.length === 0) { box.classList.remove('open'); box.innerHTML = ''; return; }
+      box.innerHTML = matches.map(v => {
+        const highlight = (text) => text.replace(new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')})`, 'gi'), '<em>$1</em>');
+        return `<div class="suggestion-item" onmousedown="selectSuggestion('${v.brand} ${v.model}')">
+          <div class="suggestion-item-icon"><i class="fas fa-car"></i></div>
+          <div class="suggestion-item-text">
+            <strong>${highlight(v.brand)} · ${highlight(v.model)}</strong>
+            <span>${v.year} · ${v.category === 'novo' ? '0KM' : v.category.charAt(0).toUpperCase() + v.category.slice(1)}</span>
+          </div>
+        </div>`;
+      }).join('');
+      box.classList.add('open');
+    }
+
+    function selectSuggestion(text) {
+      const input = document.getElementById('catalogSearch');
+      input.value = text;
+      currentSearch = text.toLowerCase();
+      document.getElementById('searchClearBtn').style.display = 'block';
+      document.getElementById('catalogSuggestions').classList.remove('open');
+      applyFilters();
+    }
+
+    function clearSearch() {
+      const input = document.getElementById('catalogSearch');
+      input.value = '';
+      currentSearch = '';
+      document.getElementById('searchClearBtn').style.display = 'none';
+      document.getElementById('catalogSuggestions').classList.remove('open');
+      applyFilters();
+    }
+
+    function filterByBrand(brand, el) {
+      currentBrand = brand;
+      document.querySelectorAll('.brand-pill').forEach(p => p.classList.remove('active'));
+      el.classList.add('active');
+      clearSearch();
+      applyFilters();
+    }
+
     function filterVehicles(category) {
-      const cards = document.querySelectorAll('.vehicle-card');
+      currentCategory = category;
       const btns = document.querySelectorAll('.filter-btn');
       btns.forEach(b => b.classList.remove('active'));
       document.getElementById('filter-' + category).classList.add('active');
+      applyFilters();
+    }
+
+    function applyFilters() {
+      const cards = document.querySelectorAll('.vehicle-card');
+      let visibleCount = 0;
+
       cards.forEach(card => {
+        const cardBrand = (card.dataset.brand || '').toLowerCase();
+        const cardModel = (card.dataset.model || '').toLowerCase();
         const cats = (card.dataset.category || '').split(' ');
-        const show = category === 'todos' || cats.includes(category);
+
+        const matchSearch = !currentSearch ||
+          cardBrand.includes(currentSearch) ||
+          cardModel.includes(currentSearch) ||
+          (cardBrand + ' ' + cardModel).includes(currentSearch);
+
+        const matchBrand = currentBrand === 'todas' || cardBrand === currentBrand;
+        const matchCategory = currentCategory === 'todos' || cats.includes(currentCategory);
+
+        const show = matchSearch && matchBrand && matchCategory;
+
         card.style.transition = 'opacity 0.3s, transform 0.3s';
         if (show) {
           card.style.opacity = '1';
           card.style.transform = '';
           card.style.display = '';
+          visibleCount++;
         } else {
           card.style.opacity = '0';
           card.style.transform = 'scale(0.95)';
-          setTimeout(() => { if (!show) card.style.display = 'none'; }, 300);
+          setTimeout(() => { card.style.display = 'none'; }, 300);
         }
       });
+
+      // Update result info
+      const resultInfo = document.getElementById('catalogResultInfo');
+      const resultText = document.getElementById('resultInfoText');
+      const noResults = document.getElementById('catalogNoResults');
+
+      if (currentSearch || currentBrand !== 'todas') {
+        resultInfo.classList.add('visible');
+        let label = currentSearch ? `"${currentSearch}"` : `Marca: ${currentBrand.charAt(0).toUpperCase() + currentBrand.slice(1)}`;
+        resultText.innerHTML = `<strong>${visibleCount}</strong> veículo${visibleCount !== 1 ? 's' : ''} encontrado${visibleCount !== 1 ? 's' : ''} para ${label}`;
+        noResults.classList.toggle('visible', visibleCount === 0);
+      } else {
+        resultInfo.classList.remove('visible');
+        noResults.classList.remove('visible');
+      }
     }
 
     // ===== FINANCIAMENTO CALCULATOR =====
